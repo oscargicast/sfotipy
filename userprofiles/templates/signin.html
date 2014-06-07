@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sign in</title>
+</head>
+
+<body>
+  <section>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+</body>
+
+</html>
