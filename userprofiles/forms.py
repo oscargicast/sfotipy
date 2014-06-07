@@ -11,6 +11,14 @@ class UserCreationEmailForm(UserCreationForm):
         model = User
         fields = ('username', 'email')
 
+    def clean_email(self):
+        email = self.cleaned_data["email"]
+        try:
+            User._default_manager.get(email=email)
+        except User.DoesNotExist:
+            return email
+        raise forms.ValidationError('Usuario duplicado')
+
 
 class EmailAuthenticationForm(forms.Form):
     email = forms.EmailField()
