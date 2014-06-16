@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),
     url(
         r'^tracks/(?P<title>[\w\-]+)/',
