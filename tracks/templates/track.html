@@ -3,11 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>tracks</title>
+  <title>Tracks {{titulo}}</title>
 </head>
 
 <body>
   <section>
+    <ul>
+      {% for track in tracks %}
+        <li>
+          <a href="{{track.get_absolute_url}}">{{track.title}}</a>
+          {% if selected_track.id == track.id %}
+            &lt;&lt;------------
+          {% endif %}
+        </li>              
+      {% endfor %}      
+    </ul>
     <p>
       Title: {{track.title}}
     </p>

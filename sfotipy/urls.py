@@ -6,10 +6,10 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+    url(r'^grappelli/', include('grappelli.urls')),  # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),
     url(
-        r'^tracks/(?P<title>[\w\-]+)/',
+        r'^tracks/(?P<title>[\w\-\W]+)/',
         'tracks.views.track_view',
         name='track_view'
     ),
