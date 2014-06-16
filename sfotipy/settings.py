@@ -31,6 +31,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
+    'sfotipy.context_processors.basic',
 )
 
 GRAPPELLI_ADMIN_TITLE = 'sfotify'
@@ -61,6 +62,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ## To enable the middleware uncomment
+    # 'sfotipy.middleware.PaisMiddleware',
 )
 
 ROOT_URLCONF = 'sfotipy.urls'
